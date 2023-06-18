@@ -1,0 +1,3 @@
+([('exec_bot',
+   '/Users/zhongyihao/Desktop/notion_bot/notion_autobot/dist/exec_bot',
+   'EXECUTABLE')],)

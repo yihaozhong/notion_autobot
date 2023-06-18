@@ -241,6 +241,7 @@ def outer(leetcode_url):
 
     if not exist:
     # Print the response
-        print(json_response)
+        return("[Added] Problem "+problem_number+ " "+problem_difficulty+" "+problem_name)
+        #print(json_response)
     else:
-        print('A page with the problem number exists.')
+        return('A page with the problem number exists.')
