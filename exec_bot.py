@@ -1,23 +1,24 @@
 import leetcode_bot
 import tkinter as tk
-from tkinter import messagebox, ttk, tkFont
+from tkinter import messagebox, ttk, font
 from datetime import datetime
 
 now = datetime.now()
 
-current_time = now.strftime("%H:%M:%S")
+
 
 def run_script():
     script_input = entry_field.get()
     output = leetcode_bot.outer(script_input)
+    current_time = now.strftime("%H:%M:%S")
     # Insert the output into the text widget
     #output_text.delete(1.0, tk.END)
-    output_text.insert(tk.END, current_time+output)
+    output_text.insert(tk.END, "\n"+current_time+output)
 
 
 # Create a root window
 root = tk.Tk()
-custom_font = tkFont.Font(family="Helvetica", size=18)
+custom_font = font.Font(family="Helvetica", size=20)
 
 # Set the window title
 root.title(u"Yihao's Leetcode Bot GUI \U0001F916")
@@ -31,14 +32,11 @@ label = tk.Label(root, text=u"Leetcode URL \U0001F517", font=custom_font)
 label.pack(pady=20)
 
 # Create an entry field
-entry_field = tk.Entry(root, font=custom_font, width=100)
+entry_field = tk.Entry(root, font=("Ariel", 15), width=70)
 entry_field.pack(pady=20)
 
-# Create a progress bar
-progress_bar = ttk.Progressbar(root, length=200, mode='indeterminate')
-
 # Create a run button
-run_button = tk.Button(root, text="Run Script", command=run_script, font=custom_font)
+run_button = tk.Button(root, text="Run Script", command=run_script, font=("Ariel", 18))
 run_button.pack(pady=20)
 
 
